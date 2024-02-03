@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">women\'s safety</string>
+    <string name="login">Login</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="Login">login</string>
+    <string name="Register">register\n</string>
+    <string name="click_to_login">Click to login</string>
+    <string name="click_to_register">register</string>
+    <string name="click_to_Register">click to register</string>
+    <string name="hello">hello</string>
+    <string name="logout">Logout</string>
+</resources>
