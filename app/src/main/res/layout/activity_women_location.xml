@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/map"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".police_location"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+    <ImageView
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/mainGo"
+        android:src="@drawable/back"
+        android:contentDescription="@string/back"/>
+
+<FrameLayout
+    android:id="@+id/women_location"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_width="match_parent"
+    android:layout_height="600dp"/>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/currentLoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/my_location"
+        android:contentDescription="@string/current_Location" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/send_current_location"
+        android:id="@+id/sendLoc"/>
+
+</LinearLayout>

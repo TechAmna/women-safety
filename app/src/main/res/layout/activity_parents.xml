@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/u"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Parents">
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/bg_view"/>
+    <TextView
+        android:id="@+id/pageName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pageName"
+        android:textSize="38sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/pageName"
+        android:id="@+id/user_name"
+        android:hint="@string/user_name"
+        android:autofillHints="username"
+        tools:ignore="LabelFor"
+        app:drawableStartCompat="@drawable/user"
+        app:drawableEndCompat="@drawable/edit" />
+    <androidx.cardview.widget.CardView
+        android:layout_below="@id/view"
+        android:id="@+id/alert"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:cardCornerRadius="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Notifications"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            app:drawableTopCompat="@drawable/notification" />
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_below="@id/alert"
+        android:layout_toEndOf="@id/alert"
+        android:id="@+id/logout"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        app:cardCornerRadius="15dp"
+        android:layout_margin="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/logout"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            app:drawableTopCompat="@drawable/logout" />
+
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

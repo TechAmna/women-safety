@@ -1,4 +1,9 @@
 <resources>
+    <string-array name="userType">
+        <item>Women</item>
+        <item>Parent/Guardian</item>
+        <item>Police</item>
+    </string-array>
     <string name="app_name">women\'s safety</string>
     <string name="login">Login</string>
     <string name="email">email</string>
@@ -6,8 +11,84 @@
     <string name="Login">login</string>
     <string name="Register">register\n</string>
     <string name="click_to_login">Click to login</string>
-    <string name="click_to_register">register</string>
     <string name="click_to_Register">click to register</string>
-    <string name="hello">hello</string>
     <string name="logout">Logout</string>
+    <string name="location">location</string>
+    <string name="women">Women</string>
+    <string name="safety_tips">Safety Tips</string>
+    <string name="notifications">Notifications</string>
+    <string name="police">Police</string>
+    <string name="parents">Parents</string>
+    <string name="click_below_for_more_safety_tips">Click below for more safety tips…</string>
+    <string name="emailAddress">EmailAddress</string>
+    <string name="image_view">image view</string>
+    <string name="user_img">user img</string>
+    <string name="contact">Contact</string>
+    <string name="number">Number</string>
+    <string name="contacts">Contacts</string>
+    <string name="a">a</string>
+    <string name="Image">image</string>
+    <string name="user_Type">User Type</string>
+    <string name="Location">Location</string>
+
+    <string name="name">Name</string>
+    <string name="add_contacts">Add Contacts</string>
+    <string name="save">Save</string>
+    <string name="Emergency">Emergency</string>
+
+    <string name="update">Update</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="add">Add</string>
+    <string name="safety_tips_for_women">Safety Tips for Women</string>
+    <string name="update_contacts">Update contact</string>
+    <string name="updates">Update</string>
+    <string name="Police">Police</string>
+
+    <string name="women_s_location">Women\'s Location</string>
+    <string name="_24_7_working_for_women_s_safety">24/7 Working for Women\'s Safety</string>
+    <string name="parents_guardian">Parents_Guardian</string>
+    <string name="women_safety_application">Women Safety Application</string>
+    <string name="add_your_information">Add your information</string>
+    <string name="emergency_tips">Emergency Tips</string>
+    <string name="parent_guardian">Parent/Guardian</string>
+    <string name="title_activity_location">location</string>
+    <string name="title_activity_women_location">women_location</string>
+    <string name="trust_your_instincts">Trust Your Instincts</string>
+    <string name="avoid_isolated_areas">Avoid Isolated Areas</string>
+    <string name="stay_connected">Stay Connected</string>
+    <string name="trustworthy_transportation">Trustworthy Transportation</string>
+    <string name="carry_personal_safety_devices">Carry Personal Safety Devices</string>
+    <string name="stay_calm_in_emergencies">Stay Calm in Emergencies</string>
+    <string name="emergency_contact">Emergency Contact</string>
+    <string name="other_emergency_tips">Other Emergency Tips:</string>
+    <string name="stay_aware_of_your_surroundings">Stay Aware of Your Surroundings</string>
+    <string name="send_tips">Send Tips</string>
+
+
+    <string name="other_links">Other Links</string>
+    <string name="eee">Get Tips From Police</string>
+    <string name="get_tips_from_police">Get Tips from Police</string>
+    <string name="users">Users</string>
+    <string name="message">message</string>
+    <string name="women_name">women_name</string>
+    <string name="women_location">swap\n</string>
+    <string name="always_here_to_support_women">Always here to Support Women</string>
+    <string name="notification">Notification</string>
+    <string name="update_contact">update contact</string>
+    <string name="updateContacts">updateContact</string>
+    <string name="current_location">Current Location</string>
+    <string name="currentLocation">Current Location</string>
+    <string name="current_Location">Current Location</string>
+    <string name="title_activity_current_location">CurrentLocation</string>
+    <string name="send_current_location">send current location</string>
+    <string name="my_location">My Location</string>
+    <string name="back">back</string>
+    <string name="title_activity_police_location">police_location</string>
+    <string name="pageName">Parents/Guardian</string>
+    <string name="user_name">user name</string>
+    <string name="Notifications">Notifications</string>
+    <string name="women_Location">Location</string>
+    <string name="todo">TODO</string>
+    <string name="click_to_register_now">Click to register now</string>
+
 </resources>
