@@ -199,7 +199,7 @@
         android:layout_height="wrap_content"
         android:text="@string/women"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="38sp"
         android:textStyle="bold|italic" />
     <TextView
@@ -214,7 +214,7 @@
         android:textSize="16sp"
         app:drawableStartCompat="@drawable/user" />
     <ImageView
-        android:id="@+id/update"
+        android:id="@+id/update_pro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/edit"

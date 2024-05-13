@@ -12,14 +12,14 @@
         android:layout_height="28dp"
         android:contentDescription="@string/back"
         android:src="@drawable/back"
-        app:layout_constraintBottom_toTopOf="@+id/contacts"
+        app:layout_constraintBottom_toTopOf="@+id/contact_row"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.041"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/contacts"
+        android:id="@+id/contact_row"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="0dp"
@@ -45,7 +45,7 @@
         android:layout_marginBottom="50dp"
         android:contentDescription="@string/Image"
         android:src="@drawable/add"
-        app:backgroundTint="@color/black"
+        app:backgroundTint="@color/green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

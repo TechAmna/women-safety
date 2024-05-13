@@ -1,14 +1,12 @@
 package com.example.womenssafety;
 
-import android.widget.EditText;
-
-public class contactModel {
+public class ContactModel {
 String name;
 String number;
-contactModel(){
+ContactModel(){
 
 }
-contactModel(String name, String number){
+ContactModel(String name, String number){
     this.name = name;
     this.number = number;
 }

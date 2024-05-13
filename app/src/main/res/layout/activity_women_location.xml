@@ -15,11 +15,11 @@
         android:src="@drawable/back"
         android:contentDescription="@string/back"/>
 
-<FrameLayout
+<androidx.fragment.app.FragmentContainerView
     android:id="@+id/women_location"
     android:name="com.google.android.gms.maps.SupportMapFragment"
     android:layout_width="match_parent"
-    android:layout_height="600dp"/>
+    android:layout_height="400dp"/>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/currentLoc"
         android:layout_width="wrap_content"
@@ -27,10 +27,15 @@
         android:layout_gravity="center"
         android:src="@drawable/my_location"
         android:contentDescription="@string/current_Location" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
         android:text="@string/send_current_location"
+        android:gravity="center"
+        android:layout_gravity="center"
         android:id="@+id/sendLoc"/>
 
 </LinearLayout>

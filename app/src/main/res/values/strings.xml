@@ -90,5 +90,11 @@
     <string name="women_Location">Location</string>
     <string name="todo">TODO</string>
     <string name="click_to_register_now">Click to register now</string>
+    <string name="update_profile">Update Profile</string>
+    <string name="enter_email">enter email</string>
+    <string name="enter_password">enter_password</string>
+    <string name="enter_number">Enter Number</string>
+    <string name="default_notification_channel_id">notification channel</string>
+    <string name="msg_token_fmt">msg</string>
 
 </resources>

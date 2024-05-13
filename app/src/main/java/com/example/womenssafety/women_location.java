@@ -4,13 +4,11 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Intent;
-import android.health.connect.datatypes.ExerciseRoute;
 import android.location.Location;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -53,21 +51,14 @@ public class women_location extends FragmentActivity implements OnMapReadyCallba
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_women_location);
         send = findViewById(R.id.sendLoc);
-        send.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendLocation();
-            }
-        });
+        send.setOnClickListener(v -> sendLocation());
         back = findViewById(R.id.mainGo);
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(women_location.this,MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        back.setOnClickListener(v -> {
+            Intent intent = new Intent(women_location.this,MainActivity.class);
+            startActivity(intent);
+            finish();
         });
         button = findViewById(R.id.currentLoc);
         com.example.womenssafety.databinding.ActivityWomenLocationBinding binding = ActivityWomenLocationBinding.inflate(getLayoutInflater());
@@ -76,18 +67,7 @@ public class women_location extends FragmentActivity implements OnMapReadyCallba
         initiateMap();
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getCurrentLocation();
-            }
-        });
-
-
-
-
-
-
+        button.setOnClickListener(v -> getCurrentLocation());
 
     }
 
@@ -97,6 +77,7 @@ public class women_location extends FragmentActivity implements OnMapReadyCallba
         intent.putExtra("latitude", currentLocationSend.getLatitude());
         intent.putExtra("longitude", currentLocationSend.getLongitude());
         startActivity(intent);
+        finish();
     }
 
 

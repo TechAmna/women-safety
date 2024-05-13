@@ -6,11 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Parents">
+
+    <!-- Background View -->
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="@drawable/bg_view"/>
+        android:background="@drawable/bg_view" />
+
+    <!-- Page Name TextView -->
     <TextView
         android:id="@+id/pageName"
         android:layout_width="wrap_content"
@@ -18,25 +22,40 @@
         android:text="@string/pageName"
         android:textSize="38sp"
         android:textStyle="bold"
-        android:textColor="@color/black"/>
+        android:textColor="@color/white"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true" />
+
+    <!-- User Name TextView -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_below="@id/pageName"
         android:id="@+id/user_name"
-        android:hint="@string/user_name"
-        android:autofillHints="username"
-        tools:ignore="LabelFor"
-        app:drawableStartCompat="@drawable/user"
-        app:drawableEndCompat="@drawable/edit" />
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pageName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:minHeight="48dp"
+        app:drawableStartCompat="@drawable/user" />
+
+    <!-- Edit Icon for Updating -->
+    <ImageView
+        android:id="@+id/update_parents"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/edit"
+        android:layout_toEndOf="@id/user_name"
+        android:layout_alignBottom="@id/user_name"
+        android:layout_marginStart="8dp" />
+
+    <!-- Alert CardView -->
     <androidx.cardview.widget.CardView
-        android:layout_below="@id/view"
         android:id="@+id/alert"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        app:cardCornerRadius="15dp"
+        android:layout_below="@id/view"
         android:layout_centerHorizontal="true"
-        android:layout_margin="12dp">
+        android:layout_marginTop="32dp"
+        app:cardCornerRadius="15dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -49,14 +68,17 @@
             app:drawableTopCompat="@drawable/notification" />
 
     </androidx.cardview.widget.CardView>
+
+    <!-- Logout CardView -->
     <androidx.cardview.widget.CardView
-        android:layout_below="@id/alert"
-        android:layout_toEndOf="@id/alert"
         android:id="@+id/logout"
         android:layout_width="100dp"
         android:layout_height="150dp"
+        android:layout_below="@id/alert"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
         app:cardCornerRadius="15dp"
-        android:layout_margin="12dp">
+        app:cardElevation="4dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -64,9 +86,37 @@
             android:text="@string/logout"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:layout_gravity="center"
             android:textColor="@color/black"
+            android:layout_gravity="center"
             app:drawableTopCompat="@drawable/logout" />
 
+
     </androidx.cardview.widget.CardView>
+    <ImageView
+        android:id="@+id/fg"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:src="@drawable/fg_view"
+        android:layout_below="@id/logout"
+        android:contentDescription="@string/back"
+        android:layout_alignParentBottom="true"/>
+    <ImageView
+        android:id="@+id/fg2"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:src="@drawable/fg_2nd"
+        android:layout_below="@id/logout"
+        android:contentDescription="@string/back"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/fg"/>
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:src="@drawable/water_drop"
+        android:layout_below="@id/logout"
+        android:contentDescription="@string/back"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/fg2"/>
+
+
 </RelativeLayout>

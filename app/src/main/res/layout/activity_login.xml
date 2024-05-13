@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:text="@string/women_safety_application"
             android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:fontFamily="serif"
             android:textSize="32sp"/>
     </LinearLayout>

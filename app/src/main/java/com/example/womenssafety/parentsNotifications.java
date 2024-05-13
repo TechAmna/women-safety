@@ -24,12 +24,12 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
-public class notifications extends AppCompatActivity {
+public class parentsNotifications extends AppCompatActivity {
 
     private TextView message;
 
     ImageView back;
-     Context context;
+    Context context;
 
 
     @Override
@@ -50,7 +50,7 @@ public class notifications extends AppCompatActivity {
 
         back = findViewById(R.id.back);
         back.setOnClickListener(v -> {
-            Intent intent = new Intent(notifications.this, police.class);
+            Intent intent = new Intent(parentsNotifications.this, police.class);
             startActivity(intent);
         });
 
@@ -105,13 +105,13 @@ public class notifications extends AppCompatActivity {
                     int notificationId = 0;
                     notificationManager.notify(notificationId, builder.build());
 
-                        String message = remoteMessage.getData().get("message");
-                        // Display notification
-                        showNotification.showNotification(getApplicationContext(), "Emergency Alert", message);
-                    }
+                    String message = remoteMessage.getData().get("message");
+                    // Display notification
+                    showNotification.showNotification(getApplicationContext(), "Emergency Alert", message);
                 }
             }
         }
+    }
     private void handleNotificationMessage() {
         // Check if activity was opened from a notification
         Bundle extras = getIntent().getExtras();

@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:text="@string/women_safety_application"
             android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:fontFamily="serif"
             android:textSize="32sp"/>
     </LinearLayout>
@@ -74,17 +74,13 @@
 
 
             <Spinner
-                android:id="@+id/select"
+                android:id="@+id/select2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/user"
                 android:entries="@array/spinner_items"
                 android:padding="17dp"
                 android:scrollbarSize="48dp" />
-
-
-
-
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
