@@ -29,23 +29,27 @@
     <!-- User Name TextView -->
     <TextView
         android:id="@+id/user_name"
-        android:layout_width="300dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/pageName"
-        android:layout_centerHorizontal="true"
+        android:padding="8dp"
         android:layout_marginTop="16dp"
         android:minHeight="48dp"
         app:drawableStartCompat="@drawable/user" />
 
     <!-- Edit Icon for Updating -->
-    <ImageView
+    <TextView
         android:id="@+id/update_parents"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/edit"
+        android:text="@string/update"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
         android:layout_toEndOf="@id/user_name"
         android:layout_alignBottom="@id/user_name"
-        android:layout_marginStart="8dp" />
+        android:layout_marginStart="8dp"
+        android:contentDescription="@string/update" />
 
     <!-- Alert CardView -->
     <androidx.cardview.widget.CardView
@@ -55,16 +59,17 @@
         android:layout_below="@id/view"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
-        app:cardCornerRadius="15dp">
+        app:cardCornerRadius="15dp"
+        tools:ignore="TextSizeCheck">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="@string/Notifications"
+            android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:layout_gravity="center"
-            android:textColor="@color/black"
             app:drawableTopCompat="@drawable/notification" />
 
     </androidx.cardview.widget.CardView>
@@ -78,45 +83,19 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
         app:cardCornerRadius="15dp"
-        app:cardElevation="4dp">
+        app:cardElevation="4dp"
+        tools:ignore="TextSizeCheck">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="@string/logout"
+            android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:textColor="@color/black"
-            android:layout_gravity="center"
             app:drawableTopCompat="@drawable/logout" />
 
 
     </androidx.cardview.widget.CardView>
-    <ImageView
-        android:id="@+id/fg"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
-        android:src="@drawable/fg_view"
-        android:layout_below="@id/logout"
-        android:contentDescription="@string/back"
-        android:layout_alignParentBottom="true"/>
-    <ImageView
-        android:id="@+id/fg2"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
-        android:src="@drawable/fg_2nd"
-        android:layout_below="@id/logout"
-        android:contentDescription="@string/back"
-        android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/fg"/>
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="100dp"
-        android:src="@drawable/water_drop"
-        android:layout_below="@id/logout"
-        android:contentDescription="@string/back"
-        android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/fg2"/>
-
-
 </RelativeLayout>

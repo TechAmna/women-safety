@@ -1,6 +1,7 @@
 package com.example.womenssafety;
 
 public class ContactModel {
+    String id;
 String name;
 String number;
 ContactModel(){
@@ -9,6 +10,7 @@ ContactModel(){
 ContactModel(String name, String number){
     this.name = name;
     this.number = number;
+    this.id=id;
 }
 
     public String getName() {
@@ -26,4 +28,6 @@ ContactModel(String name, String number){
     public void setNumber(String number) {
         this.number = number;
     }
+
+
 }

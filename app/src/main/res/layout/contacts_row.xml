@@ -10,7 +10,7 @@
 
     <LinearLayout
         android:id="@+id/row"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
@@ -36,6 +36,14 @@
             android:textColor="@color/black"
             android:textColorHint="#757575"
             android:textSize="16sp" />
+
     </LinearLayout>
+    <Button
+        android:id="@+id/btnCall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:text="@string/call" />
+
 
 </androidx.cardview.widget.CardView>

@@ -79,7 +79,7 @@
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             android:id="@+id/notification_background"
-            android:layout_width="100dp"
+            android:layout_width="150dp"
             android:layout_height="150dp"
             app:cardCornerRadius="15dp"
             android:layout_margin="12dp"
@@ -102,7 +102,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/notification"
-                    android:textSize="24sp"
+                    android:textSize="22sp"
                     android:textStyle="bold"
                     android:layout_gravity="center"
                     android:textColor="@color/black"/>
@@ -173,40 +173,45 @@
         </androidx.cardview.widget.CardView>
 
     </GridLayout>
-    <LinearLayout
-        android:id="@+id/name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+
 
 
 
     <TextView
+        android:id="@+id/name2"
         android:layout_width="170dp"
         android:layout_height="70dp"
         android:text="@string/Police"
+        android:paddingStart="50dp"
         android:textColor="@color/white"
         android:textSize="38sp"
-        android:textStyle="bold"
-        app:drawableEndCompat="@drawable/police" />
+        android:textStyle="bold" />
         <TextView
             android:id="@+id/userAcc"
-            android:layout_width="match_parent"
+            android:layout_width="250dp"
             android:layout_height="40dp"
             android:autofillHints="userEmail"
             android:contentDescription="@string/email"
             android:ems="10"
+            android:padding="10dp"
+            android:layout_below="@+id/name2"
             android:textSize="16sp"
             app:drawableStartCompat="@drawable/user" />
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/edit"
+
+        <TextView
             android:id="@+id/updateProfile"
-            android:contentDescription="@string/update"/>
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:text="@string/update"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_toEndOf="@+id/userAcc"
+            android:layout_below="@+id/name2"
+            android:contentDescription="@string/update"
+            android:src="@drawable/edit" />
 
 
-    </LinearLayout>
 
 
 

@@ -1,123 +1,119 @@
 package com.example.womenssafety;
 
-import static com.example.womenssafety.showNotification.CHANNEL_ID;
-
-import android.annotation.SuppressLint;
-import android.app.PendingIntent;
-import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.firebase.messaging.FirebaseMessagingService;
-import com.google.firebase.messaging.RemoteMessage;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class notifications extends AppCompatActivity {
+    private LocationAdapter locationAdapter;
+    private MessageAdapter messageAdapter;
+    private List<LocationHelperClass> locationList;
+    private List<MessageModel> messageList;
 
-    private TextView message;
-
-    ImageView back;
-     Context context;
-
+    private DatabaseReference locationReference, messageReference, nameRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_notifications);
-        message = findViewById(R.id.message);
-        handleNotificationMessage();
-        // Get location data from intent or wherever it's stored
-        String location = getIntent().getStringExtra("location");
 
-        // Pass location data to the fragment
-        LocationFragment locationFragment = (LocationFragment) getSupportFragmentManager().findFragmentById(R.id.locationTextView);
-        if (locationFragment != null) {
-            locationFragment.updateLocation(location);
-        }
+        RecyclerView locationRecyclerView = findViewById(R.id.location_recycler);
+        RecyclerView messageRecyclerView = findViewById(R.id.notification_rec);
 
-        back = findViewById(R.id.back);
-        back.setOnClickListener(v -> {
-            Intent intent = new Intent(notifications.this, police.class);
-            startActivity(intent);
-        });
+        locationRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        messageRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        locationList = new ArrayList<>();
+        messageList = new ArrayList<>();
+
+        locationAdapter = new LocationAdapter(locationList);
+        messageAdapter = new MessageAdapter (messageList);
+
+        locationRecyclerView.setAdapter(locationAdapter);
+        messageRecyclerView.setAdapter(messageAdapter);
 
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        locationReference = firebaseDatabase.getReference("users").child("locations");
+        messageReference = firebaseDatabase.getReference("users").child("messages");
+        nameRef = firebaseDatabase.getReference("users");
 
+
+        fetchLocationData();
+        fetchName();
+        fetchMessageData();
     }
 
-
-    @SuppressLint("MissingFirebaseInstanceTokenRefresh")
-    public class MyFirebaseMessagingService extends FirebaseMessagingService {
-
-
-        @Override
-        public void onMessageReceived(RemoteMessage remoteMessage) {
-            remoteMessage.getData();
-            if (remoteMessage.getData().containsKey("type")) {
-                String type = remoteMessage.getData().get("type");
-                if ("emergency".equals(type)) {
-                    // Handle emergency message
-                    Intent intent = new Intent(this, notifications.class);
-                    intent.putExtra("message", (CharSequence) message);
-                    PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-
-                    CharSequence notificationTitle = "";
-                    CharSequence notificationMessage = "";
-                    NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
-                            .setSmallIcon(R.drawable.notification)
-                            .setContentTitle(notificationTitle)
-                            .setContentText(notificationMessage)
-                            .setContentIntent(pendingIntent)
-                            .setAutoCancel(true);
-
-                    NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
-                    if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
-                        // TODO: Consider calling
-                        //    ActivityCompat#requestPermissions
-                        if (!NotificationManagerCompat.from(this).areNotificationsEnabled()) {
-                            Toast.makeText(this, "Permission Granted", Toast.LENGTH_SHORT).show();
-                            // Notifications are disabled
-                            // Prompt user to enable notifications
-                        }else {
-                            showNotification.showEnableNotificationsDialog(context);
-                        }
-                        return;
-                    }
-                    int notificationId = 0;
-                    notificationManager.notify(notificationId, builder.build());
-
-                        String message = remoteMessage.getData().get("message");
-                        // Display notification
-                        showNotification.showNotification(getApplicationContext(), "Emergency Alert", message);
-                    }
+    private void fetchLocationData() {
+        locationReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                locationList.clear();
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    LocationHelperClass location = dataSnapshot.getValue(LocationHelperClass.class);
+                    locationList.add(location);
                 }
+                locationAdapter.notifyDataSetChanged();
             }
-        }
-    private void handleNotificationMessage() {
-        // Check if activity was opened from a notification
-        Bundle extras = getIntent().getExtras();
-        if (extras != null && extras.containsKey("message")) {
-            String notificationMessage = extras.getString("message");
-            message.setText(notificationMessage);
-        }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(notifications.this, "Failed to retrieve data", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void fetchMessageData() {
+        messageReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                messageList.clear();
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    MessageModel message = dataSnapshot.getValue(MessageModel.class);
+                    messageList.add(message);
+                }
+                messageAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(notifications.this, "Failed to retrieve data", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+    private void fetchName(){
+        nameRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                messageList.clear();
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    MessageModel userHelper = dataSnapshot.getValue(MessageModel.class);
+                    messageList.add(userHelper);
+                }
+                messageAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(notifications.this, "No name provided", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
     }
 }
+
+

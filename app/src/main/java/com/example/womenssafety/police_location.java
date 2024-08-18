@@ -73,7 +73,7 @@ public class police_location extends FragmentActivity implements OnMapReadyCallb
 
     private void setupMapFragment() {
         FragmentManager fragmentManager = getSupportFragmentManager();
-        SupportMapFragment mapFragment = (SupportMapFragment) fragmentManager.findFragmentById(R.id.map);
+        SupportMapFragment mapFragment = (SupportMapFragment) fragmentManager.findFragmentById(R.id.police_location);
         if (mapFragment == null) {
             mapFragment = SupportMapFragment.newInstance();
             fragmentManager.beginTransaction().replace(R.id.police_location, mapFragment).commit();

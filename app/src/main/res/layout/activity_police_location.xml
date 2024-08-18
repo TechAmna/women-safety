@@ -4,14 +4,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     <ImageView
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
+        android:layout_width="45dp"
+        android:layout_height="50dp"
         android:src="@drawable/back"
         android:contentDescription="@string/back"
         android:id="@+id/goBack"/>
     <androidx.fragment.app.FragmentContainerView
+
         android:layout_width="match_parent"
-        android:layout_height="600dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:id="@+id/police_location"/>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/currentLocation"

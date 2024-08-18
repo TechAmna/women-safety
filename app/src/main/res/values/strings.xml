@@ -96,5 +96,10 @@
     <string name="enter_number">Enter Number</string>
     <string name="default_notification_channel_id">notification channel</string>
     <string name="msg_token_fmt">msg</string>
+    <string name="update2">Update</string>
+    <string name="call">Call</string>
+    <string name="backHome">back</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
 
 </resources>

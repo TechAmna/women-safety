@@ -16,19 +16,14 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class safetyTips extends AppCompatActivity {
     TextView  web;
-    ImageView back;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_safety_tips);
-        back = findViewById(R.id.Back);
-        back.setOnClickListener(v -> {
-            Intent intent = new Intent(safetyTips.this, MainActivity.class);
-            startActivity(intent);
-            finish();
-        });
+
         web= findViewById(R.id.webTips);
         web.setOnClickListener(new View.OnClickListener() {
             @Override

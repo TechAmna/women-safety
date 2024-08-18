@@ -10,8 +10,9 @@
     tools:context=".safetyTips">
     <ImageView
         android:layout_width="45dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:src="@drawable/back"
+        android:padding="6dp"
         android:contentDescription="@string/back"
         android:id="@+id/Back"/>
     <View
@@ -23,44 +24,54 @@
         android:layout_height="wrap_content"
         android:text="@string/emergency_tips"
         android:textSize="18sp"
+        android:padding="20dp"
         app:drawableEndCompat="@drawable/tips" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="6dp"
         android:text="@string/stay_aware_of_your_surroundings"
         android:textSize="18sp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="6dp"
         android:text="@string/trust_your_instincts"
         android:textSize="18sp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="6dp"
         android:text="@string/avoid_isolated_areas"
         android:textSize="18sp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="6dp"
         android:text="@string/stay_connected"
         android:textSize="18sp"/>
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:text="@string/trustworthy_transportation"
+        android:layout_height="wrap_content"
+        android:padding="6dp"
+        android:text="@string/trustworthy_transportation"
         android:textSize="18sp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="6dp"
         android:text="@string/carry_personal_safety_devices"
         android:textSize="18sp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="6dp"
         android:text="@string/stay_calm_in_emergencies"
         android:textSize="18sp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="6dp"
         android:text="@string/emergency_contact"
         android:textSize="18sp"/>
     <TextView
